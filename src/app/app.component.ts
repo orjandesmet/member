@@ -7,7 +7,7 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'member';
 
   constructor(private swUpdate: SwUpdate) {
   }
