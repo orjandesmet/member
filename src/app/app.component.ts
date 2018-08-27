@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { RecollectionService } from './services/recollection.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,10 @@ import { SwUpdate } from '@angular/service-worker';
 export class AppComponent implements OnInit {
   title = 'member';
 
-  constructor(private swUpdate: SwUpdate) {
+  constructor(
+    private swUpdate: SwUpdate,
+    private recollectionService: RecollectionService,
+  ) {
   }
 
   ngOnInit() {
@@ -20,5 +24,11 @@ export class AppComponent implements OnInit {
         }
       });
     }
+
+    this.loadRecollections();
+  }
+
+  private loadRecollections() {
+    this.recollectionService.loadRecollections();
   }
 }
