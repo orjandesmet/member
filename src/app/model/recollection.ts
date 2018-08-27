@@ -6,3 +6,16 @@ export interface Recollection {
   image: string;
   returned: boolean;
 }
+
+export function createRecollection(
+  id: string = null, itemName = '', date = { seconds: 0, nanoseconds: 0 }, personName = '', image = '', returned = false
+): Recollection {
+  return {
+    id,
+    itemName,
+    date,
+    personName,
+    image,
+    returned,
+  };
+}
