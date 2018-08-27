@@ -10,6 +10,8 @@ import { RecollectionService } from './services/recollection.service';
 export class AppComponent implements OnInit {
   title = 'member';
 
+  recollections$ = this.recollectionService.recollections$;
+
   constructor(
     private swUpdate: SwUpdate,
     private recollectionService: RecollectionService,

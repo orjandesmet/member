@@ -1,7 +1,7 @@
 export interface Recollection {
   id: string;
   itemName: string;
-  date: number;
+  date: { seconds: number, nanoseconds: number };
   personName: string;
   image: string;
   returned: boolean;
