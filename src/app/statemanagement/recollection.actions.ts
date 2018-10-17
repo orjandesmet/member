@@ -4,7 +4,12 @@ export class GetRecollections {
   static type = '[Recollections] Get recollections';
 }
 
-export class AddRecollection {
-  static type = '[Recollections] Add recollection';
+export class UpsertRecollection {
+  static type = '[Recollections] Upsert recollection';
   constructor(public readonly payload: Recollection) { }
+}
+
+export class RemoveRecollection {
+  static type = '[Recollections] Remove recollection';
+  constructor(public readonly payload: string) { }
 }
