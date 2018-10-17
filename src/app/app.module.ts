@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MaterialModule } from './shared/material/material.module';
 import { RecollectionState } from './statemanagement/recollection.state';
 
 const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.forRoot()];
@@ -31,6 +32,7 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
       RecollectionState,
     ], { developmentMode: !environment.production }),
     devPlugins,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -113,6 +113,11 @@
             "browserTarget": "member:build",
             "serverTarget": "member:server",
             "route": "app-shell-path"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "member:build:production"
+            }
           }
         }
       }
