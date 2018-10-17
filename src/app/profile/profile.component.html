@@ -1,3 +1,3 @@
-<p>
-  profile works!
+<p *ngIf="profile$ | async as profile">
+  Welcome {{ profile.firstName }} {{ profile.lastName }}
 </p>

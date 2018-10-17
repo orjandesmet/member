@@ -120,6 +120,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@^6.4.7":
+  version "6.4.7"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.4.7.tgz#1549b304dd412e82bd854cc55a7d5c6772ee0411"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@~6.1.4":
   version "6.1.5"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.1.5.tgz#312c062631285ff06fd07ecde8afe22cdef5a0e1"
@@ -2792,6 +2798,10 @@ grpc@1.13.1:
     nan "^2.0.0"
     node-pre-gyp "^0.10.0"
     protobufjs "^5.0.3"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"

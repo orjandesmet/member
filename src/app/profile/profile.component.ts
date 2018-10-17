@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FSProfileService } from '../data/firestore/fsprofile.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  profile$ = this.fsProfileService.profile$;
+
+  constructor(private fsProfileService: FSProfileService) { }
 
   ngOnInit() {
   }

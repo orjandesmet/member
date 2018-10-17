@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -23,6 +25,7 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -33,6 +36,7 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
     ], { developmentMode: !environment.production }),
     devPlugins,
     MaterialModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
