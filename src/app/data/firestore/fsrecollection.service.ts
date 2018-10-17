@@ -14,7 +14,7 @@ export class FSRecollectionService {
     .pipe(tap(values => values.forEach(v => console.log(v.id, v.itemName))));
 
   recollectionChangeActions$ = this.collection.stateChanges()
-    .pipe(mergeMap(changeActions => changeActions))
+    .pipe(mergeMap(changeActions => changeActions));
 
   constructor(private db: AngularFirestore) {
 

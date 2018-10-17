@@ -1,0 +1,4 @@
+
+<ng-container *ngFor="let recollection of recollections$ | async">
+  <app-recollection-list-item [recollection]="recollection"></app-recollection-list-item>
+</ng-container>

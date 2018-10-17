@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>
+        {{ recollection.itemName }}
+      </mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{ (recollection.date.seconds * 1000) | date }}
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-card-actions>
+      Returned: {{ recollection.returned }}
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>

@@ -27,7 +27,7 @@ export class RecollectionState {
   }
 
   @Action(UpsertRecollection)
-  addRecollection(ctx: StateContext<RecollectionStateModel>, action: UpsertRecollection) {
+  upsertRecollection(ctx: StateContext<RecollectionStateModel>, action: UpsertRecollection) {
     ctx.setState(
       produce(ctx.getState(), draft => {
         draft.ids = draft.ids.includes(action.payload.id) ? draft.ids : draft.ids.concat(action.payload.id);

@@ -12,8 +12,11 @@ import { FIREBASE_CONFIG } from '../config/firebase.config';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RecollectionListItemComponent } from './components/recollection-list-item/recollection-list-item.component';
+import { RecollectionListComponent } from './components/recollection-list/recollection-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from './shared/material/material.module';
+import { ProfileState } from './statemanagement/profile.state';
 import { RecollectionState } from './statemanagement/recollection.state';
 
 const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.forRoot()];
@@ -21,7 +24,9 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    RecollectionListComponent,
+    RecollectionListItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -33,6 +38,7 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
     AngularFirestoreModule.enablePersistence(),
     NgxsModule.forRoot([
       RecollectionState,
+      ProfileState,
     ], { developmentMode: !environment.production }),
     devPlugins,
     MaterialModule,
