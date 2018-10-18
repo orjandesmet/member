@@ -1,5 +1,4 @@
 import { enableProdMode } from '@angular/core';
-import 'hammerjs';
 import { environment } from './environments/environment';
 
 

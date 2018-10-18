@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'mem-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })

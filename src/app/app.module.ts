@@ -18,6 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from './shared/material/material.module';
 import { ProfileState } from './statemanagement/profile.state';
 import { RecollectionState } from './statemanagement/recollection.state';
+import { RecollectionDetailComponent } from './components/recollection-detail/recollection-detail.component';
+import { RecollectionNewComponent } from './components/recollection-new/recollection-new.component';
 
 const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.forRoot()];
 
@@ -26,7 +28,9 @@ const devPlugins = environment.production ? [] : [NgxsReduxDevtoolsPluginModule.
     AppComponent,
     ProfileComponent,
     RecollectionListComponent,
-    RecollectionListItemComponent
+    RecollectionListItemComponent,
+    RecollectionDetailComponent,
+    RecollectionNewComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

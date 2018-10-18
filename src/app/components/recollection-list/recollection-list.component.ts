@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RecollectionService } from 'src/app/services/recollection.service';
+import { RecollectionService } from '../../services/recollection.service';
 
 @Component({
-  selector: 'app-recollection-list',
+  selector: 'mem-recollection-list',
   templateUrl: './recollection-list.component.html',
   styleUrls: ['./recollection-list.component.scss']
 })

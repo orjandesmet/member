@@ -1,10 +1,10 @@
-import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { Action, createSelector, Selector, State, StateContext } from '@ngxs/store';
 import { produce } from 'immer';
 import { tap } from 'rxjs/operators';
 import { parseChangeActionDocument } from '../data/firestore/firestore.functions';
 import { FSRecollectionService } from '../data/firestore/fsrecollection.service';
 import { Recollection } from '../model/recollection';
-import { GetRecollections, RemoveRecollection, UpsertRecollection } from './recollection.actions';
+import { AddRecollection, GetRecollections, RemoveRecollection, UpsertRecollection } from './recollection.actions';
 
 interface RecollectionStateModel {
   ids: string[];
@@ -24,6 +24,12 @@ export class RecollectionState {
 
   @Selector() static recollections(state: RecollectionStateModel) {
     return Object.values(state.entities);
+  }
+
+  static recollectionById(recollectionId: string) {
+    return createSelector([RecollectionState], (state: RecollectionStateModel) => {
+      return state.entities[recollectionId];
+    });
   }
 
   @Action(UpsertRecollection)
@@ -63,6 +69,11 @@ export class RecollectionState {
           }
         })
       );
+  }
+
+  @Action(AddRecollection)
+  addRecollection(ctx: StateContext<RecollectionStateModel>, action: AddRecollection) {
+    return this.recollectionService.addRecollection(action.payload);
   }
 
   constructor(private recollectionService: FSRecollectionService) { }

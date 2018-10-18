@@ -1,20 +1,10 @@
 <header>
   <mat-toolbar>
-    <span>Member</span>
+    <span routerLink="/">Member</span>
     <span class="spacer"></span>
     <mat-icon routerLink="/profile">account_circle</mat-icon>
   </mat-toolbar>
 </header>
-<nav>
-  <ul>
-    <li>
-      <h2><a routerLink="/profile">Profile</a></h2>
-    </li>
-    <li>
-      <h2><a routerLink="/">Recollections</a></h2>
-    </li>
-  </ul>
-</nav>
 <main>
   <router-outlet></router-outlet>
 </main>

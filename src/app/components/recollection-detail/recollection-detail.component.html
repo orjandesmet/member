@@ -1,6 +1,5 @@
-<mat-card class="recollection-list-item" [routerLink]="['/recollection', recollection.id]">
+<mat-card class="recollection-item" *ngIf="recollection$ | async as recollection">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + recollection.image + ')'}"></div>
     <mat-card-title>
       {{ recollection.itemName }}
     </mat-card-title>
@@ -15,4 +14,5 @@
       {{ recollection.returned ? 'check' : 'repeat' }}
     </mat-icon>
   </mat-card-header>
+  <img mat-card-image [src]="recollection.image" alt="Photo of a Shiba Inu">
 </mat-card>

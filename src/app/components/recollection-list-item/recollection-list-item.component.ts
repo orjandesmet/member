@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Recollection } from 'src/app/model/recollection';
+import { Recollection } from '../../model/recollection';
 
 @Component({
-  selector: 'app-recollection-list-item',
+  selector: 'mem-recollection-list-item',
   templateUrl: './recollection-list-item.component.html',
   styleUrls: ['./recollection-list-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

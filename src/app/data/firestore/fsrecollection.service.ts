@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 import { mergeMap, tap } from 'rxjs/operators';
 import { Recollection } from '../../model/recollection';
 
@@ -18,5 +18,10 @@ export class FSRecollectionService {
 
   constructor(private db: AngularFirestore) {
 
+  }
+
+  addRecollection(recollection: Recollection): Promise<DocumentReference> {
+    delete recollection.id;
+    return this.collection.add(recollection);
   }
 }

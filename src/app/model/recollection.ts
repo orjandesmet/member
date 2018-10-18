@@ -7,15 +7,21 @@ export interface Recollection {
   returned: boolean;
 }
 
-export function createRecollection(
-  id: string = null, itemName = '', date = { seconds: 0, nanoseconds: 0 }, personName = '', image = '', returned = false
-): Recollection {
+const DEFAULT_RECOLLECTION: Recollection = {
+  id: null,
+  itemName: '',
+  date: {
+    seconds: 0,
+    nanoseconds: 0
+  },
+  personName: '',
+  image: '',
+  returned: false,
+};
+
+export function createRecollection(recollection: Partial<Recollection> = {}): Recollection {
   return {
-    id,
-    itemName,
-    date,
-    personName,
-    image,
-    returned,
+    ...DEFAULT_RECOLLECTION,
+    ...recollection,
   };
 }

@@ -14,7 +14,7 @@ export class ProfileService {
 
   constructor(private store: Store) { }
 
-  loadProfile() {
+  loadProfile(): void {
     this.store.dispatch(new GetProfile());
   }
 }

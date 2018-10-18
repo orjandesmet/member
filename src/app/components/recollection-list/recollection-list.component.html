@@ -1,4 +1,6 @@
-
 <ng-container *ngFor="let recollection of recollections$ | async">
-  <app-recollection-list-item [recollection]="recollection"></app-recollection-list-item>
+  <mem-recollection-list-item [recollection]="recollection"></mem-recollection-list-item>
 </ng-container>
+<button class="add-btn" mat-fab type="button">
+  <mat-icon routerLink="/recollections/new">add</mat-icon>
+</button>
